@@ -20,7 +20,6 @@ endfunction "}}}
 
 
 function! parse_args#parse_pattern(str, pat) "{{{
-    let str = parse_args#skip_white(a:str)
     " TODO: Use matchlist() for capturing group \1, \2, ...
     " and specify which group to use with arguments.
     let head = matchstr(str, a:pat)
@@ -30,7 +29,8 @@ endfunction "}}}
 
 
 function! parse_args#parse_one_arg_from_q_args(q_args) "{{{
-    return parse_args#parse_pattern(a:q_args, '^.\{-}[^\\]\ze\([ \t]\|$\)')
+    let q_args = parse_args#skip_white(a:q_args)
+    return parse_args#parse_pattern(q_args, '^.\{-}[^\\]\ze\([ \t]\|$\)')
 endfunction "}}}
 function! parse_args#eat_n_args_from_q_args(q_args, n) "{{{
     let rest = a:q_args
