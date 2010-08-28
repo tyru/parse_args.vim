@@ -20,6 +20,7 @@ endfunction "}}}
 
 
 function! parse_args#parse_pattern(str, pat) "{{{
+    let str = a:str
     " TODO: Use matchlist() for capturing group \1, \2, ...
     " and specify which group to use with arguments.
     let head = matchstr(str, a:pat)
