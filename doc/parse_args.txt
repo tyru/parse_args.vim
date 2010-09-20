@@ -29,7 +29,7 @@ Changelog			|parse_args-changelog|
 ==============================================================================
 INTRODUCTION						*parse_args-introduction* {{{
 
-*parse_args* provides command-line parsing functions
+parse_args provides command-line parsing functions
 which is necessary for Ex command.
 
 }}}
